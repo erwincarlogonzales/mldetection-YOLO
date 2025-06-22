@@ -63,10 +63,6 @@ The Colab notebooks (`YOLO_Detection_Counting_MLflow_Experiments_YOLOv8n.ipynb` 
 -   **Roboflow Dataset**: [Hardware Object Detection Dataset](https://app.roboflow.com/objectdetection-fvcmc/hardware-object-detection-xw2gx/models) 📦
 -   **DagsHub MLflow Tracking**: [MLflow Experiments on DagsHub](https://dagshub.com/erwincarlogonzales/mldetection-YOLO) 📊
 
-## 🤝 Contribution
-
-Feel free to fork this repo and adapt it to your needs! If you've got cool improvements or bug fixes, hit me up! 🚀
-
 ## 📜 License
 
 This project is licensed under the MIT License - see the [LICENSE](http://googleusercontent.com/AB781512/erwincarlogonzales/mldetection-yolo/erwincarlogonzales-mldetection-YOLO-73fd82a097cfcfff83b3876c47b3db758949fc75/LICENSE) for details.
