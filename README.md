@@ -1,3 +1,6 @@
+# TODO:
+    - add benchmarking pytorch, onnx, and engine
+
 # Custom Object Detection with YOLO (Ultralytics) 🚀
 
 This project provides a streamlined Google Colab workflow for training custom object detection models using Ultralytics YOLO, integrating MLflow for experiment tracking, and exporting models to ONNX and TensorRT formats. Perfect for your dissertation project, bro! 🧑‍🎓
