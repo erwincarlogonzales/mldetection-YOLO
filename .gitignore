@@ -3,3 +3,4 @@
 hardware-object-detection-5/
 *.jpg
 *.venv
+*.png

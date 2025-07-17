@@ -78,31 +78,34 @@ The following figures provide a visual summary of the model's performance during
 **Figure 1: Training and Validation Learning Curves**
 The learning curves illustrate the model's convergence over the training epochs. The plots for training and validation losses (box, class, and DFL loss) demonstrate a consistent downward trend, indicating successful learning without significant overfitting. Concurrently, key performance metrics such as precision, recall, and mean Average Precision (mAP) show a stable increase toward their respective asymptotes.
 
-![Training and Validation Curves](path/to/your/image_ca377a.jpg)
+![Training and Validation Curves](training_results/results.png)
 
 **Figure 2: Confusion Matrix for Class-level Performance**
 The confusion matrix provides a granular assessment of the model's classification accuracy. The strong diagonal concentration signifies high true-positive rates for most classes. Off-diagonal values highlight specific areas of inter-class confusion, such as the minor confusion between `long_screw` and `defect` classes.
 
-![Confusion Matrix](path/to/your/image_ca375c.png)
+![Confusion Matrix](training_results/confusion_matrix.png)
 
 **Figure 3: Precision-Recall (PR) Curve**
 The PR curve illustrates the trade-off between precision and recall. The area under this curve is a critical metric, and for all classes, the model achieves a mean Average Precision at an IoU threshold of 0.5 (mAP@0.5) of 0.988. This high value indicates that the model maintains high precision even as recall increases, which is characteristic of a robust detector.
 
-![Precision-Recall Curve](path/to/your/image_ca369f.png)
+![Precision-Recall Curve](training_results/PR_curve.png)
 
 **Figure 4: F1-Score vs. Confidence Threshold**
 This curve plots the F1-score as a function of the confidence threshold. The model achieves its maximum F1-score of 0.98 at a confidence threshold of approximately 0.490. This optimal threshold represents the point of equilibrium between precision and recall and is a critical parameter for tuning the detector for deployment.
 
-![F1-Confidence Curve](path/to/your/image_ca33f9.jpg)
+![F1-Confidence Curve](training_results/F1_curve.png)
 
 **Figures 5 & 6: Precision and Recall vs. Confidence**
 These curves further dissect the model's behavior. The Precision-Confidence curve shows that precision remains high across nearly all thresholds. The Recall-Confidence curve illustrates that recall is maintained at near-perfect levels for confidence scores up to approximately 0.8 before declining.
 
-![Precision-Confidence Curve](path/to/your/image_ca36c3.png)
+![Precision-Confidence Curve](training_results/P_curve.png)
 _Figure 5: Precision vs. Confidence Threshold._
 
-![Recall-Confidence Curve](path/to/your/image_ca36bd.png)
+![Recall-Confidence Curve](training_results/R_curve.png)
 _Figure 6: Recall vs. Confidence Threshold._
+
+![Validation Batch 0 Predictions](training_results/val_batch0_labels.jpg)
+_Figure 7: Validation Batch_
 
 ### 5.2. Benchmarking Results
 
