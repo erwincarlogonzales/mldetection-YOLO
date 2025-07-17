@@ -1,0 +1,7 @@
+format,batch_size,avg_latency_ms,p95_latency_ms,throughput_fps,memory_usage_mb,image_size
+pytorch,1,262.82,368.28,3.8,180.47,640
+pytorch,4,952.03,1340.13,4.2,120.0,640
+pytorch,8,1894.77,2534.63,4.22,63.15,640
+pytorch,16,4437.88,5108.99,3.61,360.25,640
+onnx,1,225.23,333.07,4.44,4.05,640
+tflite,1,207.22,349.14,4.83,8.54,640
