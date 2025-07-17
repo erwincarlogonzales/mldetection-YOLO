@@ -69,7 +69,44 @@ The framework requires access to external services for version control, dataset 
 
 ## 5. Empirical Analysis and Results
 
-A performance analysis was conducted on the exported YOLOv8n models to determine the optimal format for deployment. The results for single-instance inference are summarized below.
+A performance analysis was conducted on the exported YOLOv8n models to determine the optimal format for deployment.
+
+### 5.1. Model Performance Visualization
+
+The following figures provide a visual summary of the model's performance during and after training.
+
+**Figure 1: Training and Validation Learning Curves**
+The learning curves illustrate the model's convergence over the training epochs. The plots for training and validation losses (box, class, and DFL loss) demonstrate a consistent downward trend, indicating successful learning without significant overfitting. Concurrently, key performance metrics such as precision, recall, and mean Average Precision (mAP) show a stable increase toward their respective asymptotes.
+
+![Training and Validation Curves](path/to/your/image_ca377a.jpg)
+
+**Figure 2: Confusion Matrix for Class-level Performance**
+The confusion matrix provides a granular assessment of the model's classification accuracy. The strong diagonal concentration signifies high true-positive rates for most classes. Off-diagonal values highlight specific areas of inter-class confusion, such as the minor confusion between `long_screw` and `defect` classes.
+
+![Confusion Matrix](path/to/your/image_ca375c.png)
+
+**Figure 3: Precision-Recall (PR) Curve**
+The PR curve illustrates the trade-off between precision and recall. The area under this curve is a critical metric, and for all classes, the model achieves a mean Average Precision at an IoU threshold of 0.5 (mAP@0.5) of 0.988. This high value indicates that the model maintains high precision even as recall increases, which is characteristic of a robust detector.
+
+![Precision-Recall Curve](path/to/your/image_ca369f.png)
+
+**Figure 4: F1-Score vs. Confidence Threshold**
+This curve plots the F1-score as a function of the confidence threshold. The model achieves its maximum F1-score of 0.98 at a confidence threshold of approximately 0.490. This optimal threshold represents the point of equilibrium between precision and recall and is a critical parameter for tuning the detector for deployment.
+
+![F1-Confidence Curve](path/to/your/image_ca33f9.jpg)
+
+**Figures 5 & 6: Precision and Recall vs. Confidence**
+These curves further dissect the model's behavior. The Precision-Confidence curve shows that precision remains high across nearly all thresholds. The Recall-Confidence curve illustrates that recall is maintained at near-perfect levels for confidence scores up to approximately 0.8 before declining.
+
+![Precision-Confidence Curve](path/to/your/image_ca36c3.png)
+_Figure 5: Precision vs. Confidence Threshold._
+
+![Recall-Confidence Curve](path/to/your/image_ca36bd.png)
+_Figure 6: Recall vs. Confidence Threshold._
+
+### 5.2. Benchmarking Results
+
+The following table summarizes the performance of each model format for single-instance inference.
 
 | Model Format | Mean Latency (ms) | Throughput (FPS) | Memory Footprint (MB) |
 | :------------- | :------------------ | :----------------- | :---------------------- |
@@ -77,15 +114,9 @@ A performance analysis was conducted on the exported YOLOv8n models to determine
 | ONNX           | 225.23              | 4.44               | 4.05                    |
 | TFLite         | 207.22              | 4.83               | 8.54                    |
 
-![model_benchmarks](benchmark_results_20250717_101239/benchmark_results.png)
+### 5.3. Discussion and Recommendation
 
-### 5.1. Discussion of Results
-
-The empirical data reveals a significant performance differential between the native PyTorch training format and the optimized inference formats. The TFLite model achieved the lowest latency, making it the fastest for single-image processing. However, the most notable finding lies in resource utilization. The ONNX model demonstrated exceptional memory efficiency, consuming only 4.05 MB of memory—a 97.7% reduction compared to the 180.47 MB required by the PyTorch model. This efficiency is paramount for deployment in resource-constrained environments.
-
-Furthermore, an analysis of the PyTorch model's scalability showed that its throughput peaked at a batch size of 8, with performance degrading at a batch size of 16. This indicates the presence of a computational or memory-related bottleneck, further highlighting its unsuitability for optimized, high-volume inference tasks.
-
-### 5.2. Recommendation
+The empirical data reveals a significant performance differential between the native PyTorch training format and the optimized inference formats. The TFLite model achieved the lowest latency, while the ONNX model demonstrated exceptional memory efficiency (a 97.7% reduction compared to PyTorch).
 
 Based on this quantitative analysis, the **ONNX model is formally recommended for production deployment**. It provides a superior synthesis of high-speed performance and minimal memory resource consumption. This makes it an ideal candidate for a wide range of applications, from edge computing on devices with limited memory to scalable, cost-effective deployments in the cloud.
 
