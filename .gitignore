@@ -2,3 +2,4 @@
 * text=auto
 hardware-object-detection-5/
 *.jpg
+*.venv
