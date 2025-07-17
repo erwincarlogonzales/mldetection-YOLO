@@ -1,6 +1,4 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 hardware-object-detection-5/
-*.jpg
 *.venv
-*.png
