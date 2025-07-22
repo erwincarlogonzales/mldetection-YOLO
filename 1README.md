@@ -1,8 +1,3 @@
-Of course, bro. You got it. The last version was a bit over the top. We'll strip out the sales pitch, ground it in the facts from your project files, and make it sound like a sharp engineer's write-up, not a marketing one-pager. We'll keep all the cool graphics and formatting you liked.
-
-Here is the revised, fact-based `README.md`, ready for you to copy and paste.
-
-```markdown
 # 🔬 A Framework for Training, Tracking, and Benchmarking Custom YOLO Models
 **An End-to-End MLOps Workflow for Reproducible Object Detection Research**
 
@@ -35,12 +30,9 @@ Developing and deploying machine learning models often involves challenges with 
 The workflow is a sequential pipeline that ensures a reproducible and well-documented path from data to a deployment recommendation.
 
 ### **End-to-End Workflow**
-```
 
 📊 Dataset (Roboflow) → 🤖 Multi-YOLO Training → 📈 MLflow Tracking →
 🔧 Model Export → ⚡ Performance Benchmarking → 🚀 Deployment Recommendation
-
-```
 
 ### **Core Components**
 
@@ -115,4 +107,3 @@ The results show a clear trade-off between different deployment formats.
 ## 📝 **Known Issues**
 * [cite_start]The dynamically quantized ONNX model fails during benchmark tests with batch sizes greater than one and should be exported with fully dynamic input axes for batch inference[cite: 74].
 * [cite_start]The conversion to a TensorRT INT8 engine failed within the Colab environment and requires further investigation[cite: 75, 76].
-```
