@@ -1,109 +1,225 @@
-# 🔬 A Framework for Training, Tracking, and Benchmarking Custom YOLO Models
-**An End-to-End MLOps Workflow for Reproducible Object Detection Research**
+# ⚡ YOLO MLOps Training & Benchmarking Framework
+**Complete Pipeline for Training, Tracking, and Optimizing YOLO Object Detection Models**
 
 <div align="center">
 
-[![MLOps](https://img.shields.io/badge/Methodology-MLOps_Workflow-purple?style=for-the-badge)](https://mlflow.org/)
-[![YOLO](https://img.shields.io/badge/Architecture-YOLOv8_&_v11-blue?style=for-the-badge)](https://ultralytics.com/)
-[![Performance](https://img.shields.io/badge/Performance-97.7%25_Memory_Reduction-green?style=for-the-badge)](https://onnx.ai/)
-[![Deployment](https://img.shields.io/badge/Deployment-ONNX_&_TensorRT-orange?style=for-the-badge)](https://onnx.ai/)
+[![MLOps](https://img.shields.io/badge/MLOps-Experiment_Tracking-purple?style=for-the-badge)](https://mlflow.org/)
+[![YOLO](https://img.shields.io/badge/YOLO-v8_&_v11-blue?style=for-the-badge)](https://ultralytics.com/)
+[![Benchmarking](https://img.shields.io/badge/Benchmarking-Performance_Analysis-green?style=for-the-badge)](https://onnx.ai/)
+[![Colab](https://img.shields.io/badge/Google-Colab_Ready-orange?style=for-the-badge)](https://colab.research.google.com/)
 
-*A complete MLOps workflow from dataset ingestion to optimized deployment with comprehensive benchmarking and experiment tracking.*
+*End-to-end workflow for training YOLO models, tracking experiments with MLflow, and benchmarking deployment formats*
 
-[cite_start]**⚡ KEY FINDING: The ONNX model format provides the best balance of performance and efficiency, achieving a 97.7% memory reduction compared to PyTorch while maintaining a 4.44 FPS throughput[cite: 61, 62, 63, 69].**
+**🎯 Key Finding: ONNX format provides optimal balance of speed and memory efficiency with 97.7% memory reduction**
 
 </div>
 
 ---
-## 🎯 **Framework Overview**
 
-Developing and deploying machine learning models often involves challenges with reproducibility, performance comparison, and experiment management. [cite_start]This project addresses these issues by providing a systematic MLOps pipeline that covers the entire model lifecycle[cite: 4]. The framework is designed to:
+## 🎯 **Project Overview**
 
-* [cite_start]Standardize the training process for multiple YOLO architectures[cite: 8].
-* [cite_start]Provide a rigorous, data-driven method for comparing and selecting a deployment format[cite: 5].
-* [cite_start]Automate experiment tracking to ensure all results, parameters, and artifacts are logged and reproducible[cite: 9].
-* [cite_start]Base deployment decisions on empirical evidence rather than guesswork[cite: 13, 70].
+This framework provides a systematic approach to YOLO model development, from training to deployment optimization. Built for Google Colab, it streamlines the entire ML workflow while providing rigorous performance analysis to guide deployment decisions.
 
----
-## 🏗️ **MLOps Architecture**
-
-The workflow is a sequential pipeline that ensures a reproducible and well-documented path from data to a deployment recommendation.
-
-### **End-to-End Workflow**
-
-📊 Dataset (Roboflow) → 🤖 Multi-YOLO Training → 📈 MLflow Tracking →
-🔧 Model Export → ⚡ Performance Benchmarking → 🚀 Deployment Recommendation
-
-### **Core Components**
-
-#### **1. Multi-Architecture Training Pipeline**
-* [cite_start]Supports both **YOLOv8n & YOLOv11n** architectures within a unified interface[cite: 8].
-* [cite_start]Automates the logging of hyperparameters and performance metrics to MLflow[cite: 10].
-* [cite_start]Generates and stores visual artifacts like confusion matrices and PR curves[cite: 10, 41, 44].
-
-#### **2. Centralized Experiment Tracking**
-* [cite_start]Integrates with **MLflow** for comprehensive experiment management[cite: 9].
-* [cite_start]Automatically stores all artifacts, including models, plots, and logs[cite: 10].
-* [cite_start]Uses the **MLflow Model Registry** for model versioning and promotion[cite: 14].
-
-#### **3. Model Optimization & Export**
-* [cite_start]Exports models to multiple formats: PyTorch, **ONNX** (FP32, FP16, INT8), **TensorRT**, and **TFLite**[cite: 11].
-* [cite_start]Includes dynamic quantization for memory optimization[cite: 11].
-
-#### **4. Empirical Performance Benchmarking**
-* [cite_start]Measures and compares **latency, throughput, and memory consumption** for each model format[cite: 5, 13].
-* [cite_start]Provides quantitative data to support the final deployment recommendation[cite: 6, 70].
+### **What This Framework Provides**
+- **Unified training pipeline** for YOLOv8n and YOLOv11n architectures
+- **Automated experiment tracking** with MLflow integration
+- **Multi-format model export** (PyTorch, ONNX, TensorRT, TFLite)
+- **Comprehensive benchmarking** to compare deployment performance
+- **Reproducible workflows** with version control and artifact management
 
 ---
-## 📊 **Live Experiment Dashboard**
 
-All training runs, metrics, and artifacts are tracked in real-time and are publicly accessible for review and collaboration.
+## 🏗️ **Architecture & Workflow**
+
+### **Complete ML Pipeline**
+```
+📊 Roboflow Dataset → 🤖 YOLO Training → 📈 MLflow Logging → 
+🔧 Model Export → ⚡ Performance Benchmarking → 📋 Deployment Recommendation
+```
+
+### **Key Components**
+- **Training Notebooks**: Separate pipelines for YOLOv8n and YOLOv11n
+- **MLflow Integration**: Automatic logging of metrics, parameters, and artifacts
+- **Model Export**: Convert trained models to optimized inference formats
+- **Benchmarking Module**: Systematic performance comparison across formats
+
+---
+
+## 📊 **Live Experiment Tracking**
 
 **🔗 [View MLflow Experiments on DagsHub](https://dagshub.com/erwincarlogonzales/yolo-object-counter-mlflow.mlflow/#/experiments/10)**
 
----
-## 🚀 **Empirical Analysis and Results**
+All training runs, metrics, and model artifacts are tracked and accessible through the MLflow dashboard.
 
-### **Model Training Performance**
-[cite_start]The YOLOv8n model was trained and validated, achieving a **mean Average Precision (mAP@0.5) of 0.988**[cite: 45]. [cite_start]The training process showed consistent convergence without significant overfitting, and the final model demonstrated high true-positive rates across all classes[cite: 39, 42].
+---
+
+## 📈 **Training Results**
+
+### **Model Performance**
+The YOLOv8n model achieved **98.8% mAP@0.5** with strong convergence patterns:
 
 ![Training and Validation Curves](training_results/results.png)
-[cite_start]*Figure 1: Training curves illustrating model convergence and validation performance[cite: 38].*
+*Training and validation curves showing consistent learning without overfitting*
 
 ![Confusion Matrix](training_results/confusion_matrix.png)
-[cite_start]*Figure 2: Confusion matrix showing high true-positive rates for most classes[cite: 41, 42].*
+*Confusion matrix demonstrating high classification accuracy across object classes*
 
-### **Deployment Benchmarking**
-[cite_start]A performance benchmark was conducted to compare the PyTorch, ONNX, and TFLite formats on key deployment metrics[cite: 36, 54].
+### **Performance Analysis**
+![Precision-Recall Curve](training_results/PR_curve.png)
+*Precision-recall curves achieving 98.8% mAP@0.5*
 
-| Model Format | Latency (ms) | Throughput (FPS) | Memory (MB) |
-|:---|:---:|:---:|:---:|
-| PyTorch | [cite_start]262.82 [cite: 57] | [cite_start]3.80 [cite: 58] | [cite_start]180.47 [cite: 59] |
-| **ONNX** | [cite_start]**225.23** [cite: 61] | [cite_start]**4.44** [cite: 62] | [cite_start]**4.05** [cite: 63] |
-| TFLite | [cite_start]207.22 [cite: 65] | [cite_start]4.83 [cite: 66] | [cite_start]8.54 [cite: 67] |
+![F1-Confidence Curve](training_results/F1_curve.png)
+*F1-score optimization showing peak performance at 0.490 confidence threshold*
 
-### **Discussion and Recommendation**
-The results show a clear trade-off between different deployment formats.
-* [cite_start]**TFLite** is the fastest, with the lowest latency (207.22 ms) and highest throughput (4.83 FPS)[cite: 65, 66].
-* **ONNX** offers the most balanced profile. [cite_start]It is exceptionally memory-efficient (4.05 MB) while delivering strong performance (4.44 FPS)[cite: 62, 63].
+### **Detailed Metrics**
+<div align="center">
 
-[cite_start]Given its superior balance of speed and minimal memory footprint, the **ONNX model is the recommended format for production deployment**[cite: 70].
+![Precision-Confidence Curve](training_results/P_curve.png) ![Recall-Confidence Curve](training_results/R_curve.png)
+
+*Precision and recall performance across different confidence thresholds*
+
+</div>
+
+![Validation Batch 0 Predictions](training_results/val_batch0_labels.jpg)
+*Model predictions on validation data showing accurate detection and classification*
 
 ---
-## 🛠️ **Implementation Guide**
+
+## ⚡ **Benchmarking Results**
+
+### **Performance Comparison**
+
+| Model Format | Latency (ms) | Throughput (FPS) | Memory (MB) | Use Case |
+|--------------|--------------|------------------|-------------|----------|
+| PyTorch | 262.82 | 3.80 | 180.47 | Training/Research |
+| **ONNX** | **225.23** | **4.44** | **4.05** | **Production** |
+| TFLite | 207.22 | 4.83 | 8.54 | Mobile/Edge |
+
+### **Key Findings**
+- **ONNX format recommended for production**: Best balance of speed (4.44 FPS) and memory efficiency (97.7% reduction vs PyTorch)
+- **TFLite fastest for single inference**: Lowest latency but higher memory usage than ONNX
+- **PyTorch baseline**: Acceptable for research but inefficient for deployment
+
+---
+
+## 🚀 **Getting Started**
 
 ### **Prerequisites**
-[cite_start]Set the following as secrets in your Google Colab environment[cite: 24]:
-* [cite_start]`GITHUB_TOKEN` [cite: 25]
-* [cite_start]`ROBOFLOW_API_KEY` [cite: 26]
-* [cite_start]`MLFLOW_TRACKING_USERNAME` [cite: 27]
-* [cite_start]`MLFLOW_TRACKING_PASSWORD` [cite: 28]
+Configure these secrets in Google Colab:
+```
+GITHUB_TOKEN - Personal access token for repository access
+ROBOFLOW_API_KEY - API key for dataset downloads  
+MLFLOW_TRACKING_USERNAME - DagsHub username
+MLFLOW_TRACKING_PASSWORD - DagsHub access token
+```
 
-### **Running the Pipeline**
-1.  [cite_start]**Train a Model**: Execute either the `YOLO_..._YOLOv8n.ipynb` [cite: 16] [cite_start]or `YOLO_..._YOLOv11n.ipynb` [cite: 17] [cite_start]notebook to run the training and export pipeline[cite: 29, 31].
-2.  [cite_start]**Benchmark Performance**: Run the `model_benchmarking.ipynb` notebook to analyze the exported models in the `/models` directory[cite: 18, 19, 33]. [cite_start]The results will be saved to a `benchmark_results_[timestamp]` directory[cite: 20, 35].
+### **Usage**
+**1. Training:**
+- Open either `YOLO_..._YOLOv8n.ipynb` or `YOLO_..._YOLOv11n.ipynb`
+- Run all cells to execute complete training and export pipeline
+
+**2. Benchmarking:**
+- Ensure exported models are in `/models` directory
+- Open `model_benchmarking.ipynb`
+- Run all cells to generate performance analysis
+
+**3. Results:**
+- Check MLflow dashboard for experiment tracking
+- Review `/benchmark_results_[timestamp]/` for detailed metrics
 
 ---
-## 📝 **Known Issues**
-* [cite_start]The dynamically quantized ONNX model fails during benchmark tests with batch sizes greater than one and should be exported with fully dynamic input axes for batch inference[cite: 74].
-* [cite_start]The conversion to a TensorRT INT8 engine failed within the Colab environment and requires further investigation[cite: 75, 76].
+
+## 📁 **Repository Structure**
+
+```
+├── YOLO_Detection_Counting_MLflow_Experiments_YOLOv8n.ipynb
+├── YOLO_Detection_Counting_MLflow_Experiments_YOLOv11n.ipynb
+├── model_benchmarking.ipynb
+├── training_results/
+│   ├── results.png
+│   ├── confusion_matrix.png
+│   ├── PR_curve.png
+│   ├── F1_curve.png
+│   ├── P_curve.png
+│   ├── R_curve.png
+│   └── val_batch0_labels.jpg
+├── models/
+│   ├── yolov8n_best_int8_dynamic.onnx
+│   ├── yolov8n_float16.tflite
+│   └── yolov8n_pytorch_float16.pt
+├── benchmark_results_[timestamp]/
+│   ├── results.csv
+│   └── results.json
+└── README.md
+```
+
+---
+
+## 🔧 **Features**
+
+### **Training Pipeline**
+- **Multi-architecture support** for YOLOv8n and YOLOv11n
+- **Automated dataset integration** from Roboflow
+- **Comprehensive metric logging** (mAP, precision, recall)
+- **Visual artifact generation** (confusion matrices, curves)
+
+### **Model Export**
+- **Multiple format support**: ONNX (FP32/FP16/INT8), TensorRT, TFLite
+- **Quantization options** for memory-constrained environments
+- **Automated export pipeline** with error handling
+
+### **Performance Benchmarking**
+- **Latency measurement** for inference timing
+- **Memory footprint analysis** for deployment planning
+- **Throughput evaluation** for scalability assessment
+- **Comparative analysis** across all export formats
+
+---
+
+## 🔮 **Known Issues & Future Work**
+
+### **Current Limitations**
+- **ONNX dynamic batching**: INT8 quantized models fail with batch size > 1
+- **TensorRT export**: INT8 engine creation fails in Colab environment
+- **Limited to single GPU**: Multi-GPU training not implemented
+
+### **Potential Improvements**
+- Fix ONNX model export for dynamic input shapes
+- Investigate TensorRT INT8 calibration issues
+- Add support for custom dataset formats beyond Roboflow
+- Implement automated hyperparameter tuning
+
+---
+
+## 💡 **Why This Matters**
+
+This framework addresses common challenges in ML model deployment:
+
+**Problem**: Teams often deploy models without systematic performance analysis  
+**Solution**: Comprehensive benchmarking provides data-driven deployment decisions
+
+**Problem**: Inconsistent training and tracking across different model architectures  
+**Solution**: Unified pipeline with automated experiment logging
+
+**Problem**: Manual model optimization and format conversion  
+**Solution**: Automated export to multiple optimized formats with performance comparison
+
+---
+
+## 📋 **Technical Stack**
+
+- **Training**: YOLOv8n/YOLOv11n with Ultralytics
+- **Experiment Tracking**: MLflow with DagsHub hosting
+- **Model Export**: ONNX, TensorRT, TensorFlow Lite
+- **Benchmarking**: Custom Python scripts with performance profiling
+- **Environment**: Google Colab with GPU acceleration
+
+---
+
+<div align="center">
+
+**🔬 Systematic • 📊 Data-Driven • 🚀 Practical**
+
+*Building reliable ML workflows with performance validation*
+
+</div>
