@@ -174,7 +174,7 @@ For the sake of academic transparency and to guide future research, the followin
 
 This project demonstrates mastery across multiple domains critical to modern AI engineering and research:
 
-**🔬 Research Excellence:**
+**🔬 Research Expertise:**
 - Implementation of a systematic and reproducible MLOps workflow
 - Rigorous empirical analysis of model performance across multiple deployment formats
 - Clear communication of a data-backed recommendation for production systems
