@@ -168,7 +168,7 @@ For the sake of academic transparency and to guide future research, the followin
 
 ---
 
-## 🎓 **Dissertation & Professional Impact**
+## 🎓 **Professional Impact**
 
 This project demonstrates mastery across multiple domains critical to modern AI engineering and research:
 
