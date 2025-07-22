@@ -89,6 +89,8 @@ The YOLOv8n model achieved **98.8% mAP@0.5** with strong convergence patterns:
 
 ### **Performance Comparison**
 
+![Model Benchmarks](benchmark_results_20250717_101239/benchmark_results.png)
+
 | Model Format | Latency (ms) | Throughput (FPS) | Memory (MB) | Use Case |
 |--------------|--------------|------------------|-------------|----------|
 | PyTorch | 262.82 | 3.80 | 180.47 | Training/Research |
