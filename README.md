@@ -172,7 +172,7 @@ For the sake of academic transparency and to guide future research, the followin
 
 ## 🎓 **Professional Impact**
 
-This project demonstrates mastery across multiple domains critical to modern AI engineering and research:
+This project demonstrates expertise across multiple domains critical to modern AI engineering and research:
 
 **🔬 Research Expertise:**
 - Implementation of a systematic and reproducible MLOps workflow
