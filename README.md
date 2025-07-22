@@ -144,6 +144,8 @@ These curves further dissect the model's behavior. The Precision-Confidence curv
 ### **Deployment Benchmarking Results**
 The following table summarizes the performance of each model format for single-instance inference, highlighting the trade-offs between speed and memory consumption.
 
+![Model Benchmarks](benchmark_results_20250717_101239/benchmark_results.png)
+
 | Model Format | Mean Latency (ms) | Throughput (FPS) | Memory Footprint (MB) |
 | :------------- | :------------------ | :----------------- | :---------------------- |
 | PyTorch        | 262.82              | 3.80               | 180.47                  |
